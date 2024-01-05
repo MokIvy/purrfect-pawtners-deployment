@@ -1,0 +1,601 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+h5{
+  margin-bottom:0;
+}
+
+.navbar {
+  background-color: #f3deba;
+}
+
+.navbar-logo{
+  margin-right: 6px;
+}
+
+.navbar-brand {
+  font-family: "Dancing Script", cursive;
+}
+
+.landingpage-img-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+}
+
+.landingpage-img {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.landingpage-img-adoption4{
+  object-position: 60% 40%;
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.home-img {
+  object-position: 50% 50%;
+}
+
+.aboutus-img {
+  object-position: 80% 20%;
+}
+
+.adoption-carousel-2 {
+  object-position: 100% 40%;
+}
+
+.volunteer-img{
+  object-position: 65% 35%;
+  margin-bottom:20px
+}
+
+.landingpage-tagline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 20px 20px;
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.landingpage-content-volunteer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 50;
+  right: 15;
+  color: white;
+  padding: 20px;
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: right;
+  width: 100%;
+  /* Take up the entire width of the container */
+  box-sizing: border-box;
+}
+
+.landingpage-tagline-volunteer {
+  width: 100%;
+  font-family: "Pacifico", cursive;
+}
+
+.volunteer-signup-button {
+  background-color: #f28500;
+  border: none;
+  font-size: x-large;
+  margin: 12px 0px;
+}
+
+.volunteer-signup-button:hover {
+  background-color: #a9907e;
+}
+
+.volunteer-signup-tagline{
+  font-family: "Pacifico", cursive;
+  margin-top: 10%;
+}
+
+h1,
+h2{
+  font-family: "Pacifico", cursive;
+}
+
+.icon-square.bg-body-secondary {
+  background-color: transparent !important;
+}
+
+.howyoucanhelp-container {
+  padding-bottom: 30px;
+}
+
+.howyoucanhelp-card {
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: none;
+}
+
+.volunteer-card {
+  padding-bottom: 70px;
+}
+
+.reviews-name {
+  font-size: 0.9rem;
+}
+
+.reviews-img {
+  margin-bottom: 20px;
+}
+
+.whatwedo-header {
+  padding-top: 40px;
+}
+
+.whatwedo-jumbotron {
+  background-color: transparent !important;
+}
+
+.meettheteam-container {
+  max-width: 1200px;
+}
+
+.meettheteam-container-img-ivy {
+  height: auto;
+  display: inline-flex;
+  justify-content: end;
+}
+
+.meettheteam-container-p {
+  max-width: 85%;
+  text-align: left;
+}
+
+.meettheteam-ivy-img {
+  max-height: 400px;
+  border-radius: 10px;
+}
+
+.meettheteam-farrhan-p {
+  text-align: end;
+}
+
+.meettheteam-farrhan-img {
+  align-items: left;
+  max-height: 400px;
+  border-radius: 10px;
+}
+
+.believe-header {
+  padding-top: 40px;
+}
+
+.flex-container>* {
+  flex: 1;
+}
+
+.card.flex-container {
+  display: flex;
+  flex-direction: row;
+  /* this will ensure the children are laid out from left to right */
+  border: none;
+}
+
+.form-image {
+  flex: 1;
+  /* take up half the space */
+  overflow: hidden;
+  /* prevent any image overflow */
+  width: 50%;
+}
+
+.form-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  /* This will ensure the image appears below the form */
+  position: relative;
+  /* z-index works on positioned elements */
+  margin-right: 5px;
+}
+
+.form-content {
+  flex: 1;
+  /* take up half the space */
+  width: 50%;
+  z-index: 2;
+  /* This will ensure the form appears on top */
+  position: relative;
+  /* z-index works on positioned elements */
+  margin-left: 5px;
+}
+
+.album-card-body {
+  background-color: #f3deba;
+  border-radius: 5px;
+}
+
+.album-card-img{
+  height:225px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.album-card-button {
+  background-color: #a9907e;
+  border: none;
+  color: white;
+}
+
+.album-card-button:hover,  .modal-button-appointment:hover{
+  color:black;
+  background-color: #a9907e;
+}
+
+.img-thumbnail {
+  border: none;
+}
+
+.modal-button {
+  background-color: #eddfd5 !important;
+  border:none;
+  color:black
+}
+
+.modal-button-appointment {
+  text-decoration: none;
+  color: white;
+}
+
+.modal-list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 16px 8px;
+}
+
+.modal-list-bio{
+  text-align: justify;
+}
+
+.modal-list-img{
+  max-height: 250px;
+  width:100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal-list-items {
+  margin: 8px 0px;
+}
+
+/* create-pet.html */
+
+/* dropdown on hover */
+.dropdown-hover:hover .dropdown-menu {
+  display: block;
+}
+
+.pawtner-age-months, .pawtner-breed{
+  margin-left: 20px;
+}
+
+/* rounded select element */
+.custom-select {
+  border-radius: 0.25rem;
+}
+
+.volunteer-cards {
+  width: 90%;
+}
+
+/* login */
+.login-title {
+  margin-bottom: 0;
+}
+
+.volunteer-card-title{
+  font-size:1.5rem;
+  border-bottom: #a9907e solid 0.5px;
+}
+
+.volunteer-activities-card{
+  background-color: #f3deba;
+}
+
+.volunteer-card-container{
+  border: none;
+  box-shadow: 3px 2px 2px 2px #a9907e;
+}
+
+.volunteer-card-img{
+  height:290px;
+  object-fit: cover;
+}
+
+.volunteer-data-container{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  margin:20px auto;
+  position: relative;
+}
+
+.rectangle {
+  width: 300px;
+  height: 120px;
+  background-color: #f3deba;
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 3px 2px 2px 2px #a9907e;
+}
+
+.volunteer-data-number{
+  max-height:50px;
+  font-size: 2.5rem;
+  display: block;
+  line-height: 80px;
+}
+
+.volunteer-data-number3, .volunteer-data-number2{
+  font-size: 2.5rem;
+  display: block;
+  line-height: 50px;
+}
+
+.volunteer-data-text{
+  line-height: 60px;
+}
+
+/* Newsletter styling */
+.newsletter-container{
+  background-color: #f3deba;
+  width:100%;
+  margin-top:25px;
+  padding: 30px 0px;
+}
+
+.newsletter-header{
+  margin-bottom:16px
+}
+
+.newsletter-column-right{
+  text-align: left
+}
+
+.container#mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: row; /* Arrange the columns side by side */
+  align-items: center; /* Vertically align the columns */
+}
+
+#mc_embed_signup_scroll{
+  text-align: left;
+  padding-left: 120px;
+}
+
+.mc-field-group{
+  margin:16px 0px;
+  padding:0px;
+  display:flex;
+  flex-direction: column;
+}
+
+#mce-error-response{
+  display: none;
+  color: red;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+#mce-success-response{
+  display: none;
+  color: blue;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+#mc_embed_signup div.mce_inline_error{
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #f3deba !important;
+  font-weight: normal !important;
+  display:inline-block;
+  color:red !important;
+  font-size: 0.8rem !important;
+  font-style: italic !important;
+  margin:0 !important;
+  padding:0 !important
+}
+
+#mc_embed_signup input.mce_inline_error{
+  border: #a9907e 1px solid !important;
+}
+
+#mc-embedded-subscribe{
+  background-color: #a9907e;
+  border:none;
+  border-radius: 5px;
+  padding:5px;
+  color:white
+}
+
+.newsletter-img{
+  height:250px;
+}
+
+/* Adoption Filter */
+.adoption-filter-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:30px;
+}
+
+.type-filter, .gender-filter, .hdbApproved-filter{
+  margin-right: 30px;
+  height: 37.85px;
+}
+
+.filter-label{
+  background-color: #f3deba;
+}
+
+.clear-filter-button{
+  background-color: #a9907e;
+  height: 37.85px;
+  margin-right: 30px;
+  color: white;
+}
+
+.clear-filter-button:hover{
+  background-color: #a9907e;
+}
+
+.adoption-card{
+  border: none;
+}
+
+.shadow-sm {
+  box-shadow: none!important;
+}
+
+/* Update/Delete Page */
+.update-button, .update-button:hover, .update-button:active{
+  background-color: #a9907e;
+  border: none;
+}
+
+.btn-primary{
+  --bs-btn-active-bg: #a9907e;
+  --bs-btn-active-border-color:none;
+}
+
+/* Delete Modal */
+.delete-modal-body{
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+/* Media Query */
+@media (max-width: 990px) {
+  .landingpage-tagline {
+    font-size: 40px;
+  }
+
+  .meettheteam-row-ivy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .meettheteam-row-farrhan {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .meettheteam-container-img-ivy {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .meettheteam-outer-container-p {
+    display: flex;
+    align-items: center;
+    max-width: 720px;
+  }
+
+  .meettheteam-container-p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .meettheteam-farrhan-img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .meettheteam-farrhan-p {
+    text-align: center;
+  }
+
+  #mc_embed_signup_scroll{
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .newsletter-img{
+    display: none;
+  }
+
+  .container#mc_embed_signup_scroll, .adoption-filter-container-mobile{
+    display:block
+  }
+
+  /* Adoption Filter */
+  .adoption-filter-container{
+    flex-direction: column;
+  }
+
+  .adoption-filter-mobile{
+    background-color: #a9907e;
+    border: none;
+    color: white;
+    padding:8px;
+    margin-bottom: 10px;
+  }
+
+  .adoption-filter-mobile:hover{
+    background-color: #a9907e !important;
+    color: white !important;
+    border: none !important;
+  }
+
+  .clear-filter-button{
+    margin-top: 10px;
+    background-color: #a9907e;
+    color: white;
+    grid-column: span 2;
+    margin-right: 0px;
+  }
+
+  .adoption-show{
+    display: grid !important;
+    grid-template-columns: 0.6fr 1fr;
+  }
+
+  .type-filter, .gender-filter, .hdbApproved-filter{
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  .album-container{
+    margin-top: -30px;
+  }
+
+  .album{
+    padding: 20px 0px !important;
+  }
+}

@@ -67,18 +67,9 @@ function setBooleanField(fieldName, value) {
 
 // Function to fetch and populate breeds
 async function fetchBreeds(petType, selectedBreedId) {
-  const breedUrl = `/breed/type/${petType}`;
-  try {
-    const response = await fetch(breedUrl);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const breeds = await response.json();
-    breeds.sort((a, b) => a.name.localeCompare(b.name));
-    populateBreedDropdown(breeds, selectedBreedId);
-  } catch (error) {
-    console.error("Error fetching breeds:", error);
-  }
+  const breeds = await petsApiService.getBreeds(petType);
+  breeds.sort((a, b) => a.name.localeCompare(b.name));
+  populateBreedDropdown(breeds, selectedBreedId);
 }
 
 // Function to populate the breed dropdown

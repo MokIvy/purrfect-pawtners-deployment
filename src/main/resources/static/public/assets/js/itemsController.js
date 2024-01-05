@@ -3,6 +3,7 @@ class Controller {
     this.products = data !== null && data;
     this.currentId = currentId;
     this.storeDataToLocalStorage(data);
+    this.petsApiService = petsApiService;
   }
 
   storeDataToLocalStorage(data) {
@@ -44,15 +45,10 @@ class Controller {
   }
 
   async fetchAndDisplayAllPets() {
-    try {
-      let response = await fetch("/pets/all");
-      let data = await response.json();
-      this.products = data;
-      this.displayCart(data);
-      this.setupFilterListeneers();
-    } catch (error) {
-      console.error("Error fetching data from API: ", error);
-    }
+    const pets = await this.petsApiService.getAllPets();
+    this.products = pets;
+    this.displayCart(pets);
+    this.setupFilterListeneers();
   }
 
   displayCart(data) {
@@ -254,7 +250,7 @@ class Controller {
       hdbApprovedFilter.value = "All";
     });
 
-    const callApi = () => {
+    const callApi = async () => {
       const filters = [
         { name: "type", value: typeFilter.value },
         { name: "gender", value: genderFilter.value },
@@ -273,20 +269,8 @@ class Controller {
         (filter) => filter.value !== "All" && filter.value !== null
       );
 
-      const apiUrl =
-        "/pets/filter?" +
-        validFilters
-          .map((filter) => `${filter.name}=${filter.value}`)
-          .join("&");
-
-      fetch(apiUrl)
-        .then((response) => response.json())
-        .then((data) => {
-          this.displayCart(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+      let filteredPets = await this.petsApiService.filterPets(validFilters);
+      this.displayCart(filteredPets);
     };
 
     typeFilter.addEventListener("change", callApi);

@@ -1,6 +1,6 @@
 // Function to fetch pet details and populate form fields
 async function fetchPetDetails(petId) {
-  let petDetails = petsApiService.getPetDetails(petId);
+  let petDetails = await petsApiService.getPetDetails(petId);
   populateFormFields(petDetails);
 
   const pageTitle = document.getElementById("pageTitle");

@@ -1,9 +1,9 @@
 var data = [];
 
 // Function to fetch pet ID by name
-function getPetIdByName(petName) {
-  return petsApiService.getPetIdByName(petName);
-}
+// function getPetIdByName(petName) {
+//   return petsApiService.getPetIdByName(petName);
+// }
 
 /*Storing and Updating Data: The Controller class is responsible for handling the data, which includes products or pets. 
 This data is passed as an array to the constructor and is stored in the this.products property of the class. 
@@ -166,7 +166,7 @@ async function fetchData() {
 }
 
 function handleDeleteButtonClick(petName) {
-  getPetIdByName(petName)
+  petsApiService.getPetIdByName(petName)
     .then((petId) => {
       if (!petId) {
         alert("Pet not found.");

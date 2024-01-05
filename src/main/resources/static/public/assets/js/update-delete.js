@@ -2,14 +2,7 @@ var data = [];
 
 // Function to fetch pet ID by name
 function getPetIdByName(petName) {
-  const apiUrl = `/pets/name?name=${encodeURIComponent(petName)}`;
-  return fetch(apiUrl)
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to fetch petId.");
-      return response.json();
-    })
-    .then((data) => (data.length > 0 ? data[0].id : null))
-    .catch((error) => console.error("Error fetching petId: ", error));
+  return petsApiService.getPetIdByName(petName);
 }
 
 /*Storing and Updating Data: The Controller class is responsible for handling the data, which includes products or pets. 
@@ -168,8 +161,7 @@ class Controller {
 const productsController = new Controller(data.length, data);
 
 async function fetchData() {
-  const response = await fetch("/pets/all");
-  const data = await response.json();
+  const data = await petsApiService.getAllPets();
   productsController.displayCart(data);
 }
 
@@ -189,21 +181,7 @@ function handleDeleteButtonClick(petName) {
       const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
       confirmDeleteBtn.addEventListener("click", () => {
         deleteModal.hide();
-        const apiDeleteUrl = `/pets/delete/${petId}`;
-        fetch(apiDeleteUrl, { method: "DELETE" })
-          .then((response) => {
-            if (response.status === 200) {
-              window.location.reload();
-            } else {
-              alert("Failed to delete pet. Please try again.");
-            }
-          })
-          .catch((error) => {
-            console.error("Error deleting pet:", error);
-            alert(
-              "An error occurred while deleting the pet. Please try again."
-            );
-          });
+        petsApiService.deletePet(petId);
       });
 
       const cancelDeleteBtn = document.getElementById("cancelDeleteBtn");

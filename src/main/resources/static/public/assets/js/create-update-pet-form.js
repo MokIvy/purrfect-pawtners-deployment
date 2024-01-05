@@ -39,7 +39,7 @@ function populateFormFields(pet) {
   const imagePreview = document.getElementById("imagePreview");
   if (imagePreview) {
     if (pet.imagePath) {
-      const imagePath = `/public/uploads/${encodeURIComponent(pet.imagePath)}`;
+      const imagePath = `/uploads/${encodeURIComponent(pet.imagePath)}`;
       imagePreview.src = imagePath;
     } else {
       imagePreview.src = "/images/create-pet-image-placeholder.png";
@@ -197,9 +197,7 @@ newProductForm.addEventListener("submit", async (event) => {
 
   // Prepare URL and method for the request
   const method = petId ? "PUT" : "POST";
-  const url = petId
-    ? `http://localhost:8080/pets/update/${petId}`
-    : "http://localhost:8080/pets/";
+  const url = petsApiService.createOrUpdatePet(petId);
 
   // customise message based on request method
   const toastBody = document.querySelector(".create-pet-toast-header");

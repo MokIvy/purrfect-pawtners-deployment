@@ -15,6 +15,18 @@ class PetsApiService {
         }
     }
 
+    async getPetIdByName(petName){
+        const petNameUrl = `${this.baseApiUrl}/pets/name?name=${encodeURIComponent(petName)}`;
+
+        try{
+            let response = await fetch(petNameUrl);
+            let data = await response.json();
+            return data.length > 0 ? data[0].id : null;
+        } catch(error){
+            console.error("Error fetching petId: ", error)
+        }
+    }
+
     async getPetDetails(petId) {
         const petUrl = `${this.baseApiUrl}/pets/id/${petId}`;
 
@@ -51,6 +63,29 @@ class PetsApiService {
         } catch (error) {
             console.error("Error fetching data:", error);
         }
+    }
+
+    async deletePet(petId){
+        const deleteUrl = `${this.baseApiUrl}/pets/delete/${petId}`;
+        try{
+            let response = await fetch(deleteUrl, {method: "DELETE"});
+            if(response.status === 200){
+                window.location.reload();
+            } else{
+                alert("Failed to delete pet. Please try again.");
+            }
+        } catch(error){
+            console.error("Error deleting pets: ", error);
+            alert("An error occured while deleting pet. Please try again.");
+        }
+    }
+
+    createOrUpdatePet(petId){
+        const updateUrl = `${this.baseApiUrl}/pets/update/${petId}`;
+        const createUrl = `${this.baseApiUrl}/pets/`;
+
+        const url = petId ? updateUrl : createUrl;
+        return url;
     }
 }
 const petsApiService = new PetsApiService();

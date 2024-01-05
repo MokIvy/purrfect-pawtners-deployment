@@ -3,7 +3,6 @@ class Controller {
     this.products = data !== null && data;
     this.currentId = currentId;
     this.storeDataToLocalStorage(data);
-    this.petsApiService = petsApiService;
   }
 
   storeDataToLocalStorage(data) {
@@ -45,7 +44,7 @@ class Controller {
   }
 
   async fetchAndDisplayAllPets() {
-    const pets = await this.petsApiService.getAllPets();
+    const pets = await petsApiService.getAllPets();
     this.products = pets;
     this.displayCart(pets);
     this.setupFilterListeneers();
@@ -269,7 +268,7 @@ class Controller {
         (filter) => filter.value !== "All" && filter.value !== null
       );
 
-      let filteredPets = await this.petsApiService.filterPets(validFilters);
+      let filteredPets = await petsApiService.filterPets(validFilters);
       this.displayCart(filteredPets);
     };
 

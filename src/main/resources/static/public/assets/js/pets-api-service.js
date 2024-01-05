@@ -15,6 +15,18 @@ class PetsApiService {
         }
     }
 
+    async getPetDetails(petId) {
+        const petUrl = `${this.baseApiUrl}/pets/id/${petId}`;
+
+        try{
+            let response = await fetch(petUrl);
+            let petDetails = await response.json();
+            return petDetails;
+        } catch(error) {
+            console.error("Error fetching pet details: ", error)
+        }
+    }
+
     async getAllPets() {
         try {
             let response = await fetch(`${this.baseApiUrl}/pets/all`);

@@ -1,21 +1,13 @@
 // Function to fetch pet details and populate form fields
 async function fetchPetDetails(petId) {
-  try {
-    const response = await fetch(`http://localhost:8080/pets/id/${petId}`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const pet = await response.json();
-    populateFormFields(pet);
+  let petDetails = petsApiService.getPetDetails(petId);
+  populateFormFields(petDetails);
 
-    const pageTitle = document.getElementById("pageTitle");
-    const formHeader = document.getElementById("formHeader");
-    if (petId) {
-      pageTitle.innerText = "Update Pet";
-      formHeader.innerText = `Update Details of ${pet.name}`;
-    }
-  } catch (error) {
-    console.error("Error fetching pet details: ", error);
+  const pageTitle = document.getElementById("pageTitle");
+  const formHeader = document.getElementById("formHeader");
+  if (petId) {
+    pageTitle.innerText = "Update Pet";
+    formHeader.innerText = `Update Details of ${pet.name}`;
   }
 }
 

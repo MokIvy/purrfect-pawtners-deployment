@@ -86,7 +86,7 @@ class Controller {
               data-gender="${data[index].gender}" 
               data-hdbapproved="${data[index].isApproved}">
               <img class="bd-placeholder-img card-img-top album-card-img" width="100%" height="225" 
-              src="/public/uploads/${data[index].imagePath}"/>
+              src="/uploads/${data[index].imagePath}"/>
               <div class="card-body album-card-body">
                 <h2>${data[index].name}</h2>
                 <p>${ageInfo} old // ${data[index].gender}</p>
